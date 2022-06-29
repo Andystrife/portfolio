@@ -1,0 +1,1273 @@
+/* ----------GLOBAL STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+h2, h3, h4 {
+    font-family: lato;
+    color: #426082;
+}
+
+.copyright {
+    width: 50%;
+    text-align: center;
+    display: block;
+    margin: 0 auto 10px auto;
+    font-weight: bold;
+    font-size: .75em;
+}
+
+
+/* ----------Mobile Styles */
+
+@media only screen and (min-width: 300px) {
+
+    /* ----------Navigation */
+
+    nav {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 1;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav a {
+
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 10px;
+        text-decoration: none;
+        font-size: .5em;
+    }
+
+
+    nav a:hover {
+        background: #ddd;
+        color: black;
+    }
+
+    /* ----------Main Page */
+
+    .hey_there {
+        position: relative;
+        background: linear-gradient(#def1fc, #6be7f3, #def1fc, #23a6d5 76%, #97D026 78%, #014612);
+        min-height: 100vh;
+        border-bottom: 4px solid orange;
+        overflow: hidden;
+    }
+
+    .cloud_bg {
+        width: 100%;
+        height: 100px;
+        position: relative;
+        padding-top: 20%;
+        display: inline-block;
+    }
+
+    .clouds {
+        position: absolute;
+        width: 125%;
+        height: 250%;
+        overflow: hidden;
+    }
+
+    .clouds:before, .clouds:after {
+        content: "";
+        position: absolute;
+        width: 125%;
+        height: 250%;
+        background-image: url("images/cloud2.png");
+        background-repeat: repeat-x;
+        background-size: 250%;
+        animation: clouds 20s infinite linear;
+    }
+
+    .clouds:before {
+        right: 100%;
+    }
+
+    @keyframes clouds {
+
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
+
+
+
+
+    .island_float {
+        width: 90%;
+        display: block;
+        margin: 0 auto 0 auto;
+        position: absolute;
+        top: 34%;
+        left: 5%;
+        animation: island_float 5s linear infinite;
+
+    }
+
+    @keyframes island_float {
+
+        0% {
+
+            transform: translatey(0px);
+        }
+
+        50% {
+
+            transform: translatey(-20px);
+        }
+
+        100% {
+
+            transform: translatey(0px);
+        }
+
+    }
+
+    .shadow {
+        margin-left: 37%;
+        background-color: #33333332;
+        width: 5em;
+        height: .75em;
+        position: absolute;
+        top: 78%;
+        border-radius: 50%;
+        animation: shadow 5s linear infinite;
+    }
+
+
+
+    @keyframes shadow {
+
+        0% {
+            transform: scalex(2);
+            background: radial-gradient(#333333c5, #33333332, transparent);
+        }
+
+        50% {
+            transform: scalex(1);
+
+        }
+
+        100% {
+            transform: scalex(2);
+            background: radial-gradient(#333333c5, #33333332, transparent);
+        }
+    }
+
+
+
+
+    .hello {
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 7vw;
+        text-shadow: 2px 2px 5px orange;
+        text-align: center;
+        padding-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+
+    }
+
+    @keyframes scale {
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .fadein {
+        display: inline-block;
+        opacity: 0;
+        filter: blur(4px);
+    }
+
+    .fadein:nth-child(1) {
+        animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .fadein:nth-child(2) {
+        animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .fadein:nth-child(3) {
+        animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    @keyframes fade-in {
+        100% {
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+
+    /* ----------Intro Page */
+
+    .intro {
+        background-image: url("images/leaves.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5% 0;
+        font-size: 7vw;
+        border-bottom: 4px solid orange;
+        overflow: hidden;
+    }
+
+    #profile_img {
+        margin-bottom: 2em;
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        border-radius: 50%;
+        border: 5px solid orange;
+    }
+
+    #profile_img.profile_animate {
+        position: relative;
+        animation: profile 2s 1 ease;
+    }
+
+    @keyframes profile {
+        from {
+            left: -600px;
+
+        }
+
+        to {
+            left: 0px;
+            transform: rotatey(1440deg);
+        }
+    }
+
+    #webdev {
+        font-size: 5vw;
+        margin-bottom: 150px;
+        background: #f1f1f1a9;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px solid orange;
+        padding: .5em;
+
+
+    }
+
+    #webdev.web_animate {
+        position: relative;
+        animation: webdev 2s 1 ease;
+    }
+
+    @keyframes webdev {
+        from {
+            right: -600px;
+
+        }
+
+        to {
+            right: 0px;
+            transform: rotatey(1440deg);
+        }
+    }
+
+
+
+
+
+    .btn, .btn_contact {
+        background-color: orange;
+        border: none;
+        color: white;
+        padding: .5em;
+        cursor: pointer;
+        font-size: .5em;
+    }
+
+
+    .btn:hover, .btn_submit:hover, .btn_contact:hover {
+        background-color: rgb(186, 130, 24);
+    }
+
+    .btn a, .btn_contact a, .btn_submit a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+
+    .btn_submit {
+        background-color: orange;
+        border: none;
+        color: black;
+        padding: .5em 3em;
+        cursor: pointer;
+        font-size: 1em;
+        border-radius: 20px;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    .btn_contact {
+        margin: 1em 5%;
+        font-size: 1em;
+    }
+
+    /* ----------About Page */
+
+    .about {
+
+        background: #86efff url("images/hillsbg.png") no-repeat;
+        background-size: auto 100%;
+        background-position: 85%;
+        height: 100vh;
+        border-bottom: 4px solid orange;
+        overflow: hidden;
+    }
+
+
+
+    /* The slides fit well on mobile, not on the chrome responsive emulator */
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        position: relative;
+        display: block;
+        width: 100%;
+        font-size: .8em;
+        margin-bottom: 2%;
+        line-height: 1.25em;
+    }
+
+
+    .mySlides h2 {
+        margin-top: 0;
+        line-height: 1.25em;
+    }
+
+    /* Slides */
+    .mySlides {
+        display: none;
+        padding: 1em;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        margin-top: -30px;
+        color: #888;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+
+    .next {
+        position: absolute;
+        right: 40%;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+        position: absolute;
+        left: 40%;
+        border-radius: 3px 0 0 3px;
+    }
+
+
+    .prev:hover, .next:hover {
+        color: black;
+    }
+
+    .skills1 {
+        display: block;
+        background: linear-gradient(90deg, transparent, 10%, #f1f1f177, 90%, transparent);
+        height: 100%;
+    }
+
+    .skills_block {
+        width: 100%;
+        padding-bottom: 5%;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .col1_skills {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .skills_block p {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .col2_skills {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .skills_block p {
+        margin-bottom: .25em;
+        font-size: .6em;
+
+    }
+
+    .container {
+        width: 50%;
+        background-color: #ddd;
+        border-radius: 20px;
+        height: 15px;
+    }
+
+    .skills {
+        text-align: right;
+        padding-right: 10px;
+        color: white;
+        border-radius: 20px;
+        height: 15px;
+        font-size: .6em;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .html {
+        width: 90%;
+        background-color: #04AA6D;
+    }
+
+
+
+
+    .css {
+        width: 80%;
+        background-color: #2196F3;
+    }
+
+
+    .js {
+        width: 65%;
+        background-color: #f44336;
+    }
+
+    .php {
+        width: 70%;
+        background-color: #AE1DBF;
+    }
+
+    .sql {
+        width: 65%;
+        background-color: #FFD24F;
+    }
+
+    .illustrator {
+        width: 80%;
+        background-color: #b22383;
+
+    }
+
+    .photoshop {
+        width: 65%;
+        background-color: #eea539;
+    }
+
+    .xd {
+        width: 60%;
+        background-color: #1ac614;
+
+    }
+
+    .wordpress {
+        width: 80%;
+        background-color: #42d4f9;
+
+    }
+
+    .skill_scale {
+        position: relative;
+        animation: skill_scale 2s 1 ease;
+
+    }
+
+    @keyframes skill_scale {
+        from {
+            transform: scale(0);
+
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    /* ----------Websites Page */
+
+
+    .websites {
+        background: #86efff url("images/tree.png") no-repeat bottom;
+        background-size: 100%;
+        background-position: 100% 102%;
+        flex-direction: column;
+        height: 120vh;
+        border-bottom: 4px solid orange;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .flip-card {
+        width: 80%;
+        margin: 1em;
+        background-color: transparent;
+        height: 25%;
+        perspective: 1000px;
+    }
+
+    .flip-card img {
+        height: 80%;
+    }
+
+    .flip-card-back {
+        font-size: .6em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+
+    }
+
+    .flip-card h3 {
+        margin: .2em;
+
+    }
+
+    .flip-card a {
+        color: white;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 5px 5px 15px #000000;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+        background-color: rgb(222, 222, 222);
+        color: black;
+    }
+
+    /* ----------Illustrations Page */
+
+    .images {
+        background: url("images/bushborder1.png") no-repeat bottom, linear-gradient(#6be7f3, #def1fc 50%, #23a6d5);
+        background-size: 100%;
+
+        height: 100%;
+        border-bottom: 4px solid orange;
+    }
+
+    .websitesHeader, .illustrator_pics, .contact_page {
+        text-align: center;
+        margin-top: 0;
+        padding-top: 2%;
+        margin-bottom: 0;
+    }
+
+    .about_header {
+        text-align: center;
+        margin-top: 0;
+
+    }
+
+    .skills_subheader {
+        text-align: center;
+
+    }
+
+    .images_row1, .images_row2 {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 1.5%;
+        flex-wrap: wrap;
+    }
+
+    .images_row3 {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5%;
+    }
+
+    .images_row1 a, .images_row2 a, .images_row3 a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+
+    .pic {
+
+        display: block;
+        width: 40%;
+        background-color: white;
+        box-shadow: 5px 5px 15px #000000;
+        padding: .75em .75em 1.5em .75em;
+        margin: 1em;
+        text-align: center;
+        transition: transform 0.4s;
+        font-size: .60em;
+    }
+
+    .pic2 {
+        display: block;
+        width: 40%;
+        background-color: white;
+        box-shadow: 5px 5px 15px #000000;
+        padding: .75em .75em 1.5em .75em;
+        margin: 1em;
+        text-align: center;
+        transition: transform 0.4s;
+        font-size: .6em;
+    }
+
+    .pic img, .pic2 img {
+        width: 100%;
+        box-shadow: inset 0 0 5px rgb(96, 96, 96);
+        padding: 1em;
+    }
+
+    .pic:hover, .pic2:hover {
+        box-shadow: 5px 5px 15px orange;
+        transform: scale(1.1) rotate(5deg);
+
+    }
+
+    .pic h3, .pic2 h3 {
+        margin: 0;
+    }
+
+    /* ----------Contact Page */
+
+
+    .sunflower_img {
+        width: 25%;
+    }
+
+    .sunflower_img.sunflower_animate {
+        position: relative;
+        animation: sunflower 2s 1 ease;
+    }
+
+
+
+    .contact {
+        background: url("images/sunflower1.png"), url("images/sunflower2.png"), url("images/sunflower4.png"), url("images/sunflower1.png"), url("images/sunflower3.png"), linear-gradient(#6be7f3, #def1fc 40%, #88dcfb);
+        background-position: 0%2150%, 25% 250%, 40% 250%, 75% 250%, 120% 250%;
+        background-repeat: no-repeat;
+        height: 100%;
+        background-color: #86efff;
+        border-bottom: 4px solid orange;
+
+    }
+
+    .contact_animate {
+        position: relative;
+        animation: sunflower .5s 1 ease-in;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+
+    }
+
+    @keyframes sunflower {
+        from {
+            background-position: 0% 250%, 25% 250%, 40% 250%, 75% 250%, 120% 250%;
+
+        }
+
+        to {
+            background-position: 0% 100%, 25% 100%, 40% 100%, 75% 100%, 120% 100%;
+
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 4%;
+    }
+
+
+    .details img {
+        display: block;
+        width: 75%;
+        margin: 0 auto 4% auto;
+    }
+
+    .contact_form {
+        display: block;
+        width: 90%;
+        padding: 1em;
+        border: 1px solid black;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    input, textarea {
+        border: .5px solid orange;
+        border-style: none none solid none;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    ::placeholder {
+        color: rgb(169, 169, 169);
+    }
+
+    #message {
+        height: 40px;
+        width: 100%;
+
+
+    }
+
+    .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .btn_contact {
+        text-align: center;
+        font-size: .5em;
+    }
+
+}
+
+
+/* Island Resizes to avoid ground collision */
+@media only screen and (min-width: 425px) {
+
+    .island_float {
+        width: 50%;
+        top: 38%;
+        left: 25%;
+    }
+
+    .shadow {
+        margin-left: 43%;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+    /* ----------Navigation */
+
+
+
+    nav a {
+        font-size: 1em;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+
+
+
+
+    /* ----------Main Page */
+
+
+    .cloud_bg {
+        padding-top: 25%;
+    }
+
+    .clouds {
+        height: 100%;
+    }
+
+    .clouds:before, .clouds:after {
+        height: 100%;
+    }
+
+
+
+    .island_float {
+        width: 40%;
+        top: 45%;
+        left: 12%;
+    }
+
+
+    .shadow {
+        width: 15%;
+        margin-left: 0;
+        left: 23%;
+    }
+
+
+    .hello {
+        font-size: 3em;
+        text-align: right;
+        padding-right: 10%;
+        position: absolute;
+        top: 35%;
+        right: 0;
+    }
+
+
+    /* ----------About Page */
+
+    .about {
+        background-size: auto;
+        background-position: bottom;
+    }
+
+
+
+    /* The slides fit well on mobile, not on the chrome responsive emulator */
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        font-size: 1em;
+        padding-bottom: 20%;
+    }
+
+    .skills_block p {
+        font-size: .8em;
+
+    }
+
+    .container {
+        height: 20px;
+    }
+
+    .skills {
+        height: 20px;
+
+    }
+
+    /* ----------Websites Page */
+
+
+    .websites {
+        background-position: -10% 105%;
+    }
+
+
+    .flip-card-back {
+        font-size: 1em;
+    }
+
+    .flip-card h3 {
+        margin-top: 3%;
+    }
+
+
+
+    /* ----------Illustrations Page */
+
+    .images {
+        background-size: 100% auto;
+    }
+
+
+
+    .pic, .pic2 {
+        font-size: 1em;
+    }
+
+
+
+
+    /* ----------Contact Page */
+
+
+    .contact {
+        background: url("images/sunflower1.png"), url("images/sunflower2.png"), url("images/sunflower4.png"), url("images/sunflower1.png"), url("images/sunflower3.png"), url("images/sunflower1.png"), url("images/sunflower4.png"), url("images/sunflower2.png"), linear-gradient(#6be7f3, #def1fc 40%, #88dcfb);
+        background-position: 0% 250%, 15% 250%, 25% 250%, 45% 250%, 65% 250%, 75% 250%, 90% 250%, 100% 250%;
+        background-repeat: no-repeat;
+    }
+
+
+
+    @keyframes sunflower {
+        from {
+            background-position: 0% 250%, 15% 250%, 25% 250%, 45% 250%, 65% 250%, 75% 250%, 90% 250%, 100% 250%;
+
+        }
+
+        to {
+            background-position: 0% 100%, 15% 100%, 25% 100%, 45% 100%, 65% 100%, 75% 100%, 90% 100%, 100% 100%;
+
+        }
+    }
+
+    .details img {
+        width: 60%;
+    }
+
+    .contact_form {
+        width: 75%;
+    }
+
+    .cta {
+        background-color: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        margin: 50px auto;
+
+    }
+
+    .btn_contact {
+        font-size: .75em;
+    }
+}
+
+
+/* Island adjusted to avoid collision */
+@media only screen and (min-width: 825px) {
+
+    .island_float {
+        top: 25%;
+    }
+}
+
+
+/* ------------------Small Laptop to Desktop*/
+
+
+
+@media only screen and (min-width: 1024px) {
+
+
+    /* ----------Navigation */
+
+    nav a {
+        font-size: 1em;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    /* ----------Main Page */
+
+
+    .cloud_bg {
+        padding-top: 15%;
+    }
+
+    .clouds {
+        height: 100%;
+    }
+
+    .clouds:before, .clouds:after {
+        height: 100%;
+        background-size: 150%;
+        animation: clouds 50s infinite linear;
+    }
+
+
+    .island_float {
+        width: 35%;
+        top: 25%;
+        left: 15%;
+    }
+
+    .shadow {
+        width: 15%;
+        margin-left: 0;
+        left: 23%;
+    }
+
+
+
+    .hello {
+        font-size: 3em;
+        padding-right: 15%;
+        top: 30%;
+    }
+
+    /* ----------Intro Page */
+
+    .intro {
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 1em;
+    }
+
+    #profile_img {
+        margin-bottom: 0;
+        width: 30%;
+    }
+
+
+    #webdev {
+        font-size: 2em;
+        margin-bottom: 0;
+    }
+
+    .btn_contact {
+        margin: 4em 5%;
+
+    }
+
+    /* ----------About Page */
+
+    .about {
+        background-size: cover;
+        background-position: bottom;
+        display: flex;
+        align-items: center;
+    }
+
+    .skills1 {
+        background: linear-gradient(180deg, transparent, 20%, #f1f1f194, 80%, transparent);
+        height: 75%;
+    }
+
+
+    /* The slides fit well on mobile, not on the chrome responsive emulator */
+    .content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        font-size: 1em;
+        padding-bottom: 0;
+    }
+
+
+    .skills_block {
+        justify-content: center;
+    }
+
+    .skills_subheader {
+        text-align: center;
+        margin-top: 0;
+        padding-top: .5em
+    }
+
+    .col1_skills {
+        width: 45%;
+    }
+
+    .col2_skills {
+        width: 45%;
+    }
+
+    .skills_left, .skills_right {
+        width: 50%;
+    }
+
+    /* ----------Websites Page */
+
+
+    .websites {
+        background: #86efff url("images/treelarge.png") no-repeat;
+        background-size: 110% 120%;
+        background-position: -1em 95%;
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .flip-card {
+        width: 25%;
+        margin-bottom: 3em;
+    }
+
+    .flip-card h4 {
+        margin: .35em;
+
+    }
+
+
+    .flip-card-inner {
+        height: 115%;
+    }
+
+
+    .flip-card-front, .flip-card-back {
+        height: 105%;
+    }
+
+
+    /* ----------Illustrations Page */
+
+    .images {
+        background: url("images/bushborder1.png") no-repeat bottom, linear-gradient(#6be7f3, #def1fc 50%, #23a6d5);
+        background-size: 100% auto;
+    }
+
+
+    .images_row1, .images_row2 {
+        flex-wrap: nowrap;
+    }
+
+    .images_row2 {
+        justify-content: center;
+
+    }
+
+    .pic {
+        width: 15%;
+        font-size: 1em;
+    }
+
+    .pic2 {
+        width: 20%;
+        margin: 1em 4em;
+        font-size: 1em;
+    }
+
+    /* ----------Contact Page */
+
+
+    .contact {
+        background: url("images/sunflower1.png"), url("images/sunflower4.png"), url("images/sunflower2.png"), url("images/sunflower4.png"), url("images/sunflower3.png"), url("images/sunflower2.png"), url("images/sunflower1.png"), url("images/sunflower4.png"), url("images/sunflower2.png"), url("images/sunflower1.png"), url("images/sunflower3.png"), url("images/sunflower4.png"), url("images/sunflower2.png"), linear-gradient(#6be7f3, #def1fc 40%, #88dcfb);
+        background-position: 0% 250%, 10% 250%, 15% 250%, 20% 250%, 25% 250%, 30% 250%, 45% 250%, 55% 250%, 65% 250%, 75% 250%, 85% 250%, 90% 250%, 100% 250%;
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+
+
+    @keyframes sunflower {
+        from {
+            background-position: 0% 250%, 10% 250%, 15% 250%, 20% 250%, 25% 250%, 30% 250%, 45% 250%, 55% 250%, 65% 250%, 75% 250%, 85% 250%, 90% 250%, 100% 250%;
+
+        }
+
+        to {
+            background-position: 0% 100%, 10% 100%, 15% 100%, 20% 100%, 25% 100%, 30% 100%, 45% 100%, 55% 100%, 65% 100%, 75% 100%, 85% 100%, 90% 100%, 100% 100%;
+
+        }
+    }
+
+
+    .details img {
+        width: 40%;
+    }
+
+    .contact_form {
+        width: 40%;
+    }
+
+    input, textarea {
+        background-color: #ffffff99;
+    }
+
+
+
+    #message {
+        width: 75%;
+    }
+
+    .cta {
+        background: linear-gradient(90deg, transparent, 5%, #ffffff99, 95%, transparent);
+        width: 50%;
+        margin: 50px auto;
+    }
+
+    .btn_contact {
+        font-size: .75em;
+        margin: 2em 5%;
+    }
+
+}
+
+
+/*Another Island Adjustment... */
+@media only screen and (min-width: 1200px) {
+    .island_float {
+        top: 15%;
+        left: 14%;
+    }
+
+    .hello {
+        padding-right: 15%;
+        top: 15%;
+        font-size: 4em;
+    }
+
+
+    .flip-card-back {
+        font-size: .7em;
+    }
+}
