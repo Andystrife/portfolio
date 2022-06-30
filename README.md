@@ -1,5 +1,5 @@
 # portfolio
-The Portfolio of Andy Dinsmore!
+<h1>The Portfolio of Andy Dinsmore!</h1>
 
 Here You can find details about Who I am, What I do, and What I'm looking for.
 There are also a few samples of projects that I have worked on as well as recent illustrations.
